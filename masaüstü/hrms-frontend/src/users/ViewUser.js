@@ -3,17 +3,28 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 export default function ViewUser() {
     const [user,setUser]=useState({
-        name: "",
-        username: ""       
+        firstName: "",
+        middleName: "" ,
+        gender:"",
+        lastName:"",
+        birthDay:"",
+        startDate:"",
+        quitDate:"",
+        emailAddress:"", 
+        profilePhoto: "",
+        state:"",
+        phoneNumber:""
+
       })
 
       const {id}=useParams();
+
       useEffect(()=>{
         loadUser();
       }, []);
 
       const loadUser=async ()=>{
-        const result=await axios.get(`http://localhost:9091/v1/api/manager/findAllEmployee/${id}`);
+        const result=await axios.get(`http://localhost:9091/v1/api/manager/findbyid/${id}`);
         setUser(result.data);
       }
     return (
@@ -25,13 +36,51 @@ export default function ViewUser() {
                         <div className='card-header'>Details of user id:{user.id}
                             <ul className='list-group list-group-flush'>
                                 <li className='list-group-item'>
-                                    <b>Name: </b>
-                                    {user.name}
+                                    <b>Photo: </b>
+                                    {user.profilePhoto}
                                 </li>
                                 <li className='list-group-item'>
-                                    <b>UserName: </b>
-                                    {user.username}
+                                    <b>Name: </b>
+                                    {user.firstName}
                                 </li>
+                                <li className='list-group-item'>
+                                    <b>MiddleName: </b>
+                                    {user.middleName}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>Last Name: </b>
+                                    {user.lastName}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>E-mail: </b>
+                                    {user.phoneNumber}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>Gender: </b>
+                                    {user.gender}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>Phone Number: </b>
+                                    {user.phoneNumber}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>State: </b>
+                                    {user.state}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>Start date: </b>
+                                    {user.startDate}
+                                </li>
+                                <li className='list-group-item'>
+                                    <b>Quit date: </b>
+                                    {user.quitDate}
+                                </li>
+                                
+                                <li className='list-group-item'>
+                                    <b>Birthday: </b>
+                                    {user.birthDay}
+                                </li>
+                                
                             </ul>
                         </div>
                     </div>
