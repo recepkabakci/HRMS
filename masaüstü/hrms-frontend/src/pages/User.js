@@ -10,7 +10,7 @@ export default function User() {
     }, []);
 
     const loadUsers = async () => {
-        const result = await axios.get("http://localhost:9091/v1/api/manager/findAllEmployee")
+        const result = await axios.get("http://20.123.246.134:9091/v1/api/manager/findAllEmployee")
         setUsers(result.data);
     }
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 const EMPLOYEE_BASE_REST_API_URL="http://20.123.246.134:9091/v1/api/manager/createemployee";
 const EMPLOYEE_API_BASE_URL =  "http://20.123.246.134:9091/v1/api/manager/findAllEmployee" ;
-const EMPLOYEE_API_BASE_URL_ID =`http://localhost:9091/v1/api/manager/findById`;
+const EMPLOYEE_API_BASE_URL_ID ="http://20.123.246.134:9091/v1/api/manager/findById";
 class EmployeeService{
 
     getEmployees(){
