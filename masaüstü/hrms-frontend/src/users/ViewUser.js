@@ -24,7 +24,7 @@ export default function ViewUser() {
       }, []);
 
       const loadUser=async ()=>{
-        const result=await axios.get(`http://localhost:9091/v1/api/manager/findbyid/${id}`);
+        const result=await axios.get('http://localhost:9091/v1/api/manager/findById/${id}')
         setUser(result.data);
       }
     return (

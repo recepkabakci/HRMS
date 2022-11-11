@@ -25,3 +25,7 @@ header {
   padding: 150px 200px;
   width: 100%;
 }
+.icon-bar {
+  width: 90px; /* Set a specific width */
+  background-color: rgb(204, 61, 61); /* Dark-grey background */
+}
